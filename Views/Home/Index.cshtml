@@ -1,0 +1,55 @@
+﻿<!--***************************************************************
+* Name        : UserAge
+* Author      : Devin Baack
+* Created     : 5/31/2021
+* Course      : CIS 174 - Advanced C#
+* Version     : 1.0
+* OS          : Windows 10, Visual Studio
+* Copyright   : This is my own original work based on
+*               specifications issued by our instructor
+* Description : This program creates a web page displaying information about the user.
+*               Input:  None
+*               Output: Formatted web page with all created model attributes
+* Academic Honesty: I attest that this is my original work.
+* I have not used unauthorized source code, either modified or
+* unmodified. I have not given other fellow student(s) access
+* to my program.
+***************************************************************-->
+
+@model UserAgeModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>User Info</h1>
+    <form asp-action="Index" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+            <p></p>
+        </div>
+        <div>
+            <label asp-for="BirthDate"> Birth Date (MM/DD/YYY):</label>
+            <input asp-for="BirthDate" />
+            <p></p>
+        </div>
+
+        <button type="submit">Calculate</button>
+        <a asp-action="Index">Clear</a>
+        <br />
+        <br />
+        <label asp-for="Age">Age:</label>
+    </form>
+</body>
+</html>
